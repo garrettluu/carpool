@@ -11,6 +11,10 @@ module.exports = function(database, io) {
         res.render('rides', {  });
     });
 
+    router.get('/carpool', function(req, res, next) {
+        res.render('carpool', {  });
+    });
+
     router.get('/login', (req, res, next) => {
         res.render('login', {});
     });
@@ -34,4 +38,3 @@ module.exports = function(database, io) {
 
     return router;
 };
-
