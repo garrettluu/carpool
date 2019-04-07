@@ -3,11 +3,8 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+let socketio = require('socket.io');
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
-
-var app = express();
 
 //Initialize Firebase
 let firebase = require('firebase');
@@ -22,7 +19,17 @@ var config = {
 
 firebase.initializeApp(config);
 
-var database = firebase.database();
+let database = firebase.database();
+
+let app = express();
+let io = socketio();
+
+app.io = io;
+
+//Pass database to router
+var indexRouter = require('./routes/index')(database, io);
+var usersRouter = require('./routes/users');
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
