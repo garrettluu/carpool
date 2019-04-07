@@ -94,9 +94,22 @@ div.drivers{
     padding : 10px;
 }
 
-/*div.h-separators{*/
-    /*height : 5px;*/
-/*}*/
+div.left_divider{
+    display: inline-block;
+}
+
+div.right_divider{
+    display: inline-block;
+}
+
+div.big_right_divider{
+    display: inline-block;
+    vertical-align: top;
+}
+
+div.h-separators{
+    height : 5px;
+}
 
 div.v-separators{
     width : 50px;
