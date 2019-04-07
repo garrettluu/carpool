@@ -2,10 +2,10 @@ module.exports = function(database, io) {
   var express = require('express');
   var router = express.Router();
 
-  /* GET home page. */
-  router.get('/', function (req, res, next) {
-    res.render('index', {title: 'Express'});
-  });
+/* GET home page. */
+router.get('/', function(req, res, next) {
+  res.render('index', { title: 'Carpool: Rideshare Redefined' });
+});
 
   router.get('/login', (req, res, next) => {
     res.render('login', {});
