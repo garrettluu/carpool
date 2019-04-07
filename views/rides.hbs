@@ -1,80 +1,36 @@
 <!--The division created for the whole thing-->
-<div class = "themed_background">
+<div class="content">
+<div class="themed_background">
     <!--Left division: all the drivers-->
-    <div class = "left_divider">
+    <div class="left_divider">
+        <button onclick="refreshRides()">Refresh</button>
         <!-- The whole Brian Division-->
-        <div class = "drivers">
+        <div class="drivers">
             <!--Brian's Info-->
-            <div class = "left_divider">
-                <h3>Brian</h3>
-                <p>Maggie's Random Brand Style 1</p>
-                <p>Remaining seats : 3</p>
-                    <button type="button" onclick="alert('Successfully reserved Brian!')">Reserve Brian</button>
-
+            <div class="left_divider">
+                <h3>Name</h3>
+                <p>Remaining seats : 0</p>
+                    <button type="button" onclick="">Reserve Name</button>
             </div>
 
             <!--Vertical Division-->
-            <div class =  "photo_divider"></div>
+            <div class="photo_divider"></div>
 
             <!--Brian's photo-->
-            <div class = "right_divider">
-                <img src = "https://scontent-lax3-1.xx.fbcdn.net/v/t1.0-9/16196015_10154888128487744_6901111466535510271_n.png?_nc_cat=103&_nc_ht=scontent-lax3-1.xx&oh=bb9ccf1e8cdd270c5434e1d4c53750b1&oe=5D43E7E9" width = "125" height="125">
+            <div class="right_divider">
+                <img src="https://scontent-lax3-1.xx.fbcdn.net/v/t1.0-9/16196015_10154888128487744_6901111466535510271_n.png?_nc_cat=103&_nc_ht=scontent-lax3-1.xx&oh=bb9ccf1e8cdd270c5434e1d4c53750b1&oe=5D43E7E9" width = "125" height="125">
             </div>
         </div>
             <!-- The separator for space -->
-            <div class = "h-separators"></div>
-
-            <!-- Following is the Nathan tab -->
-            <div  class = "drivers">
-                  <!--Nathan's Info-->
-                  <div class = "left_divider">
-                      <h3>Nathan</h3>
-                      <p>Maggie's Random Brand Style 1</p>
-                      <p>Remaining seats : 3</p>
-                          <button type="button" onclick="alert('Successfully reserved Nathan!')">Reserve Nathan</button>
-
-                  </div>
-
-                  <!--Vertical Division-->
-                  <div class =  "photo_divider"></div>
-
-                  <!--Nathan's photo-->
-                  <div class = "right_divider">
-                      <img src = "https://scontent-lax3-1.xx.fbcdn.net/v/t1.0-9/16196015_10154888128487744_6901111466535510271_n.png?_nc_cat=103&_nc_ht=scontent-lax3-1.xx&oh=bb9ccf1e8cdd270c5434e1d4c53750b1&oe=5D43E7E9" width = "125" height="125">
-                  </div>
-            </div>
-
-            <!-- The separator for space -->
-            <div class = "h-separators"></div>
-
-            <!--Following is the Garrett tab-->
-            <div  class = "drivers">
-                <!--Garrett's Info-->
-                <div class = "left_divider">
-                    <h3>Garrett</h3>
-                    <p>Maggie's Random Brand Style 1</p>
-                    <p>Remaining seats : 3</p>
-                        <button type="button" onclick="alert('Successfully reserved Garrett!')">Reserve Garrett</button>
-
-                </div>
-
-                <!--Vertical Division-->
-                <div class =  "photo_divider"></div>
-
-                <!--Garrett's photo-->
-                    <div class = "right_divider">
-                        <img src = "https://scontent-lax3-1.xx.fbcdn.net/v/t1.0-9/16196015_10154888128487744_6901111466535510271_n.png?_nc_cat=103&_nc_ht=scontent-lax3-1.xx&oh=bb9ccf1e8cdd270c5434e1d4c53750b1&oe=5D43E7E9" width = "125" height="125">
-                    </div>
-            </div>
-      </div>
+            <div class="h-separators"></div>
 
       <!--The blank vertical separator-->
-      <div class = "v-separators"></div>
+      <div class="v-separators"></div>
 
         <!--The divison of the request rides panel-->
-        <div class = "big_right_divider">
+        <div class="big_right_divider">
             <!--The box containing text-->
-            <div class = "text_box">
+            <div class="text_box">
               <p> <b>Your search:</b> </p>
               <p> <b>From:</b> UCSD Sixth College</p>
               <p> <b>To:</b> Regents La Jolla </p>
@@ -82,4 +38,5 @@
               <button type="button" onclick="window.location.href = '/carpool'">Make a new search</button>
             </div>
         </div>
+</div>
 </div>

@@ -75,7 +75,8 @@ function getLocationForRide() {
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition((position) => {
             var loc = new Location(position.coords.latitude, position.coords.longitude);
-            newRide(loc, dest);
+            var seats = document.getElementById('seats-num').value;
+            newRide(loc, dest, seats);
         })
     } else {
         // Geolocation not supported
@@ -95,7 +96,7 @@ function onSignIn(googleUser) {
     xhr.send('idtoken=' + id_token);
 }
 
-function newRide(location, destination) {
+function newRide(location, destination, seats) {
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.open("POST", '/newride', true);
     xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
@@ -103,6 +104,17 @@ function newRide(location, destination) {
         "userId": "twonder",
         "name": "Tracker Wonderdog",
         "location": location,
-        "destination": destination
+        "destination": destination,
+        "seats": seats
     }));
+}
+
+function refreshRides() {
+    console.log("Refreshed");
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.addEventListener("load", () => {
+        console.log(this.responseText);
+    });
+    xmlhttp.open("GET", '/update', true);
+    xmlhttp.send();
 }
