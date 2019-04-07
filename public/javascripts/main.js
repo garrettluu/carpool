@@ -1,16 +1,3 @@
-var config = {
-    apiKey: "AIzaSyBxvyLamhcTZczjtobRuYFIE6RahuIV-mg",
-    authDomain: "carpool-1554591126344.firebaseapp.com",
-    databaseURL: "https://carpool-1554591126344.firebaseio.com",
-    projectId: "carpool-1554591126344",
-    storageBucket: "carpool-1554591126344.appspot.com",
-    messagingSenderId: "769999411158"
-};
-
-firebase.initializeApp(config);
-
-let database = firebase.database();
-
 function Location(lat, long) {
     this.lat = lat;
     this.long = long;
@@ -20,10 +7,7 @@ function getLocation() {
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition((position) => {
             var loc = new Location(position.coords.latitude, position.coords.longitude);
-            database.ref('rides/' + "bleung").set({
-                name: "Brian Leung",
-                location: loc,
-            });
+            newRide(loc);
         })
     } else {
         // Geolocation not supported
@@ -34,6 +18,21 @@ function getLocation() {
 
 function onSignIn(googleUser) {
     var id_token = googleUser.getAuthResponse().id_token;
-    
+    var xhr = new XMLHttpRequest();
+    xhr.open('POST', 'https://localhost:3000/tokensignin');
+    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    xhr.onload = function() {
+        console.log('Signed in as: ' + xhr.responseText);
+    };
+    xhr.send('idtoken=' + id_token);
 }
-getLocation();
+
+function newRide(location) {
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.open("POST", "/newride")
+    xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+    xmlhttp.send(JSON.stringify({
+        "name": "Garrett Luu",
+        "location": location
+    }));
+}
