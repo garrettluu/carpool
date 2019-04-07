@@ -22,12 +22,9 @@ firebase.initializeApp(config);
 let database = firebase.database();
 
 let app = express();
-let io = socketio();
-
-app.io = io;
 
 //Pass database to router
-var indexRouter = require('./routes/index')(database, io);
+var indexRouter = require('./routes/index')(database);
 var usersRouter = require('./routes/users');
 
 
