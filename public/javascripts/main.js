@@ -112,9 +112,42 @@ function newRide(location, destination, seats) {
 function refreshRides() {
     console.log("Refreshed");
     var xmlhttp = new XMLHttpRequest();
-    xmlhttp.addEventListener("load", () => {
-        console.log(this.responseText);
-    });
+    xmlhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            // Typical action to be performed when the document is ready:
+            var jsonObj = JSON.parse(xmlhttp.responseText);
+            for (var key in jsonObj) {
+                if (jsonObj.hasOwnProperty(key)) {
+                    console.log(jsonObj[key]);
+                    var driver = jsonObj[key];
+                    buildDriverDiv(driver.name, driver.seats)
+                }
+            }
+            // console.log(jsonObj.valueOf());
+
+        }
+    };
     xmlhttp.open("GET", '/update', true);
     xmlhttp.send();
+}
+
+function buildDriverDiv(name, seats) {
+    //Create outer div
+    var outerDiv = document.createElement('div');
+    outerDiv.className = 'drivers';
+    //Append to container
+    document.getElementById('driver-container').appendChild(outerDiv);
+
+    var driverData = document.createElement('div');
+    driverData.className = 'left_divider';
+
+    outerDiv.appendChild(driverData);
+
+    var nameText = document.createElement('h3');
+    nameText.innerText = name;
+    driverData.appendChild(nameText);
+
+    var seatsText = document.createElement('p');
+    seatsText.innerText = "Remaining Seats: " + seats;
+    driverData.appendChild(seatsText);
 }

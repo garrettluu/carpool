@@ -26,9 +26,14 @@ module.exports = function(database) {
     });
 
     router.get('/update', (req, res) => {
-        ridesRef.on('child_added', (data) => {
-
-        })
+        database.ref('rides/').on('value', (snapshot) => {
+            console.log(snapshot.val());
+            res.setHeader('Content-Type', 'application/json');
+            res.send(JSON.stringify(snapshot.val()));
+            // for (driver in snapshot.val()) {
+            //     console.log(driver.valueOf());
+            // }
+        });
     });
 
     router.post('/tokensignin', (req, res) => {
