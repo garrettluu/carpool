@@ -3,10 +3,30 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
+nav{
+    background-color : #001B7C;
+    color : #FFFFFF;
+    font-size: 20;
+    padding: 10px;
+}
+
 a {
-  color: #00B7FF;
+    color: #00B7FF;
+}
+
+a.nav_tab{
+    color: #DFDB2D;
 }
 
 div.drivers{
-    width : 150px;
+    width : 420px;
+    padding : 10px;
+}
+
+div.h-separators{
+    height : 5px;
+}
+
+div.v-separators{
+    width : 50px;
 }
