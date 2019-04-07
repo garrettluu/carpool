@@ -15,6 +15,10 @@ module.exports = function(database) {
         res.render('drive', {});
     });
 
+    router.get('/carpool', function(req, res, next) {
+        res.render('carpool', {  });
+    });
+
     router.get('/login', (req, res, next) => {
         res.render('login', {});
     });

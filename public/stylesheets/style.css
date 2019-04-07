@@ -114,12 +114,56 @@ a.nav_tab{
     color: #DFDB2D;
 }
 
+button{
+  border-color: #ABB6D9;
+  background-color: linen;
+  color: navy;
+}
+
 div.drivers{
-    width : 420px;
+    max-width: 500px;
     padding : 10px;
+    background-color: rgba(140, 186, 250, 0.5);
+}
+
+div.themed_background{
+    font-family: "Courier New";
+    background-image: url("/images/long-road.jpg");
+    padding : 20px;
+    height: 100%;
+}
+
+div.left_divider{
+    display: inline-block;
+}
+
+div.right_divider{
+    display: inline-block;
+}
+
+div.big_right_divider{
+    display: inline-block;
+    vertical-align: top;
+}
+
+div.photo_divider{
+    display : inline-block;
+    width : 50px;
+}
+
+div.text_box{
+    background-color: rgba(255,255,255,0.5);
+    padding: 10px;
 }
 
 .content {
-  margin-top: 81px;
+    margin-top: 81px;
+}
+div.h-separators{
+    height : 5px;
 }
 
+div.v-separators{
+    display: inline-block;
+    width : 100px;
+}
