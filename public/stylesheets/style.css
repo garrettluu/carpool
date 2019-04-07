@@ -1,6 +1,13 @@
-body {
+* {
   margin: 0;
+  <-- font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; -->
+}
+body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+@font-face {
+  font-family: "Raleway";
+  src: url("/fonts/Raleway-Regular.ttf");
 }
 
 .titles-home {
@@ -16,9 +23,20 @@ body {
 }
 
 #ridesharing-redefined {
-  background-image: url("/images/long-road.jpg");
+  background-image: linear-gradient(0deg, rgba(0,0,0,0.6), rgba(0,0,0,0.4)), url("/images/long-road.jpg");
+  background-size: cover;
+  background-position: center;
   font-size: 80px;
-  padding-left: 200px;
+  font-family: "Raleway";
+  text-shadow: 2px 2px 20px #000000;
+  color:#FAFAFA;
+  text-align: center;
+
+  padding-top: 150px;
+  <-- padding-left: 250px; -->
+}
+#pitch-tag2 {
+  padding-bottom: 150px;
 }
 
 ul {
@@ -31,6 +49,7 @@ ul {
   top: 0;
   left: 0;
   z-index: 999;
+  font-family: "Raleway";
 }
 
 li {
@@ -41,7 +60,7 @@ li {
   margin: 10px;
 }
 #drive-link {
-  padding-right:800px;
+  padding-right:787px;
 }
 #login-link {
   padding-right:78px;
