@@ -5,11 +5,20 @@
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
-    <nav>
-        <a class = "nav_tab" href = "/rides"> Rides </a> |
-        <a class = "nav_tab" href = "/signup"> Sign Up </a> |
-        <a class = "nav_tab" href = "/login"> Login </a>
-    </nav>
+    <div id="header">
+      <ul id="title-bar">
+        <li id="company"><a class="active"href = "/"> Carpool </a> </li>
+        <li id="logo-link"><a href = "/"> <img src="/images/click-carpool.jpg" width="80px"; > </a> </li>
+        <li id="rides-link"><a class = "active" href="/rides"> Rides </a> </li>
+        <li id="drive-link"><a class="active" href = "/drive"> Drive </a> </li>
+        <li id="signup-link"><a class="active" href = "/signup"> Sign Up </a> </li>
+        <li id="login-link"><a class="active" href = "/login"> Login </a> </li>
+      </ul>
+    </div>
     {{{body}}}
   </body>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.9.3/firebase.js"></script>
+  <script src="javascripts/main.js"></script>
 </html>

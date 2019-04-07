@@ -1,17 +1,88 @@
 body {
-  padding: 50px;
+  margin: 0;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
-nav{
-    background-color : #001B7C;
-    color : #FFFFFF;
-    font-size: 20;
-    padding: 10px;
+.titles-home {
+  font-family: "Oswald", sans-serif;
+  font-size: 30px;
+  font-style: italic;
+  font-weight: bold;
+  text-indent: 80px;
+  padding-top: 30px;
+}
+#pitch-tag1 {
+  padding-top: 81px;
+}
+
+#ridesharing-redefined {
+  background-image: url("/images/long-road.jpg");
+  font-size: 80px;
+  padding-left: 200px;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding-left: 50px;
+  overflow: hidden;
+  background-color:#212121;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+}
+
+li {
+  float: left;
+}
+
+#logo-link {
+  margin: 10px;
+}
+#drive-link {
+  padding-right:800px;
+}
+#login-link {
+  padding-right:78px;
+}
+.active {
+  font-size: 26px;
+  display: block;
+  text-align: center;
+  padding: 25px 50px;
+  text-decoration: none;
+  color:#F5F5F5;
+  transition: background-color 0.2s ease-out;
+}
+
+.active:hover {
+  background-color:#607D8B;
+}
+#welcome {
+  padding-left: 500px;
+  border: 0;
+  margin: 0;
+  padding-bottom: 0;
+}
+#sign-up {
+  padding-left: 1000px;
+}
+#signup {
+  padding-left: 250px;
+  padding-right: 500px;
+}
+#credits {
+  padding-left: 600px;
+}
+.descriptions {
+  font-size: 22px;
+  text-indent: 80px;
+
 }
 
 a {
-    color: #00B7FF;
+  color: #00B7FF;
 }
 
 a.nav_tab{
@@ -23,9 +94,9 @@ div.drivers{
     padding : 10px;
 }
 
-div.h-separators{
-    height : 5px;
-}
+/*div.h-separators{*/
+    /*height : 5px;*/
+/*}*/
 
 div.v-separators{
     width : 50px;
