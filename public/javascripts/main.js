@@ -115,6 +115,7 @@ function refreshRides() {
     xmlhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
             // Typical action to be performed when the document is ready:
+            removeDriverDiv();
             var jsonObj = JSON.parse(xmlhttp.responseText);
             for (var key in jsonObj) {
                 if (jsonObj.hasOwnProperty(key)) {
@@ -150,4 +151,22 @@ function buildDriverDiv(name, seats) {
     var seatsText = document.createElement('p');
     seatsText.innerText = "Remaining Seats: " + seats;
     driverData.appendChild(seatsText);
+
+    var reserveButton = document.createElement('button');
+    reserveButton.innerText = "Reserve";
+    driverData.appendChild(reserveButton);
 }
+
+function removeDriverDiv() {
+  var removeVar = document.getElementById("driver-container");
+  while (removeVar.firstChild) {
+    removeVar.removeChild(removeVar.firstChild);
+  }
+}
+// function removeDriverDiv() {
+//   var removeVar = document.getElementsByClassName('drivers');
+//   var i;
+//   for (i = 0; i < removeVar.length; i++) {
+//     removeVar[i].parentNode.removeChild(removeVar[i]);
+//   }
+// }
