@@ -2,22 +2,41 @@ body {
   margin: 0;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
-#header {
-  display: inline-block;
-}
+
 .titles-home {
   font-family: "Oswald", sans-serif;
   font-size: 30px;
   font-style: italic;
   font-weight: bold;
   text-indent: 80px;
+  padding-top: 30px;
 }
-
-li {
+ul {
   list-style-type: none;
   margin: 0;
-  padding: 0;
-  display: inline;
+  padding-left: 50px;
+  overflow: hidden;
+  background-color:#212121;
+}
+li {
+  float: left;
+}
+
+#drive-link {
+  padding-right:800px;
+}
+li a {
+  font-size: 26px;
+  display: block;
+  text-align: center;
+  padding: 20px 50px;
+  text-decoration: none;
+  color:#F5F5F5;
+  transition: font-size 0.4s ease-out, background-color 0.2s ease-out;
+}
+
+li a:hover {
+  background-color:#607D8B;
 }
 #welcome {
   padding-left: 500px;
@@ -36,7 +55,7 @@ li {
   padding-left: 600px;
 }
 .descriptions {
-  font-size: 16px;
+  font-size: 22px;
   text-indent: 80px;
 
 }
