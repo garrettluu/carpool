@@ -4,6 +4,8 @@
 }
 body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  margin: 0;
+  font-weight: 300;
 }
 @font-face {
   font-family: "Raleway";
@@ -39,10 +41,21 @@ body {
   padding-bottom: 150px;
 }
 
+.container {
+  width: 80%;
+  margin: 0 auto;
+  font-family: "Raleway";
+  font-size: 220%;
+  border: 1px;
+  width: 38%;
+  border-style: solid;
+  border-color: #BDBDBD;
+}
+
 ul {
   list-style-type: none;
   margin: 0;
-  padding-left: 50px;
+  padding: 0;
   overflow: hidden;
   background-color:#212121;
   left: 0;
@@ -51,22 +64,20 @@ ul {
   position: fixed;
   z-index: 999;
   font-family: "Raleway";
-  box-shadow: 2px 2px 20px #000000;
+  box-shadow: 2px 2px 10px #000000;
 }
 
 li {
   float: left;
+  padding-right: 10%;
+
 }
 
-#logo-link {
-  margin: 10px;
+
+nav {
+  float: right;
 }
-#drive-link {
-  padding-right:787px;
-}
-#login-link {
-  padding-right:78px;
-}
+
 .active {
   font-size: 26px;
   display: block;
@@ -76,6 +87,28 @@ li {
   color:#F5F5F5;
   transition: background-color 0.2s ease-out;
 }
+
+nav ul {
+  margin: 0;
+  padding-right: 50%;
+  list-style: none;
+}
+
+nav li {
+  display: inline-block;
+  margin-left: 7%;
+  padding-top: 2%;
+}
+
+nav a {
+  color: linen;
+  display: inline-block;
+  margin-right: 7%;
+  text-transform: uppercase;
+
+
+}
+
 
 .active:hover {
   background-color:#607D8B;
@@ -101,7 +134,6 @@ li {
   text-indent: 80px;
 
 }
-
 #map {
   height: 400px;
 }
@@ -164,7 +196,7 @@ div.h-separators{
 }
 
 /* login CSS section */
-
+/*
 .login-box{
   font-family: "Raleway";
   font-size: 36px;
@@ -195,3 +227,4 @@ div.v-separators{
     display: inline-block;
     width : 100px;
 }
+*/
