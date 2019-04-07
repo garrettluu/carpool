@@ -1,6 +1,44 @@
 body {
-  padding: 50px;
+  margin: 0;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+#header {
+  display: inline-block;
+}
+.titles-home {
+  font-family: "Oswald", sans-serif;
+  font-size: 30px;
+  font-style: italic;
+  font-weight: bold;
+  text-indent: 80px;
+}
+
+li {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: inline;
+}
+#welcome {
+  padding-left: 500px;
+  border: 0;
+  margin: 0;
+  padding-bottom: 0;
+}
+#sign-up {
+  padding-left: 1000px;
+}
+#signup {
+  padding-left: 250px;
+  padding-right: 500px;
+}
+#credits {
+  padding-left: 600px;
+}
+.descriptions {
+  font-size: 16px;
+  text-indent: 80px;
+
 }
 
 a {
