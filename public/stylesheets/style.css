@@ -96,14 +96,16 @@ button{
 }
 
 div.drivers{
-    width : 420px;
+    max-width: 500px;
     padding : 10px;
     background-color: rgba(140, 186, 250, 0.5);
 }
 
 div.themed_background{
+    font-family: "Courier New";
     background-image: url("/images/long-road.jpg");
     padding : 20px;
+    height: 100%;
 }
 
 div.left_divider{
