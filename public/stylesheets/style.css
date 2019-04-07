@@ -84,3 +84,20 @@ li {
 a {
   color: #00B7FF;
 }
+
+a.nav_tab{
+    color: #DFDB2D;
+}
+
+div.drivers{
+    width : 420px;
+    padding : 10px;
+}
+
+/*div.h-separators{*/
+    /*height : 5px;*/
+/*}*/
+
+div.v-separators{
+    width : 50px;
+}
