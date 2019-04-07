@@ -22,13 +22,20 @@ module.exports = function(database) {
     router.post('/tokensignin', (req, res) => {
         //TODO: Verify ID token
     });
+database.ref('rides/' + 'galuu').set({
+    name: 'Garrett Luu',
+    location: {lat: 100, long: 100},
+//             destination: req.destination
+});
 
     router.post('/newride', (req, res) => {
-        database.ref('rides/' + req.userId).set({
-            name: req.name,
-            location: req.location,
-            // destination: req.destination
+        console.log("post request");
+        database.ref('rides/' + req.body.userId).set({
+            name: req.body.name,
+            location: req.body.location,
+            destination: req.body.destination
         });
+        res.send('Received POST');
     });
 
 

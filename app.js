@@ -1,9 +1,9 @@
 var createError = require('http-errors');
 var express = require('express');
+var bodyParser = require('body-parser');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-let socketio = require('socket.io');
 
 
 //Initialize Firebase
@@ -19,9 +19,15 @@ var config = {
 
 firebase.initializeApp(config);
 
-let database = firebase.database();
 
+let database = firebase.database();
+// database.ref('rides/' + 'galuu').set({
+//             name: 'Garrett Luu',
+//             location: {lat: 100, long: 100},
+//             destination: req.destination
+        // });
 let app = express();
+app.use(express.json());
 
 //Pass database to router
 var indexRouter = require('./routes/index')(database);
