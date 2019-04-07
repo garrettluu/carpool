@@ -89,9 +89,21 @@ a.nav_tab{
     color: #DFDB2D;
 }
 
+button{
+  border-color: #ABB6D9;
+  background-color: linen;
+  color: navy;
+}
+
 div.drivers{
     width : 420px;
     padding : 10px;
+    background-color: rgba(140, 186, 250, 0.5);
+}
+
+div.themed_background{
+    background-image: url("/images/long-road.jpg");
+    padding : 20px;
 }
 
 div.left_divider{
@@ -107,10 +119,21 @@ div.big_right_divider{
     vertical-align: top;
 }
 
+div.photo_divider{
+    display : inline-block;
+    width : 50px;
+}
+
+div.text_box{
+    background-color: rgba(255,255,255,0.5);
+    padding: 10px;
+}
+
 div.h-separators{
     height : 5px;
 }
 
 div.v-separators{
-    width : 50px;
+    display: inline-block;
+    width : 100px;
 }
