@@ -3,7 +3,7 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Carpool: Redefining Ridesharing' });
+  res.render('index', { title: 'Carpool: Rideshare Redefined' });
 });
 
 module.exports = router;
