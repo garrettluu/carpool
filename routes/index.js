@@ -1,4 +1,4 @@
-module.exports = function(database, io) {
+module.exports = function(database) {
     var express = require('express');
     var router = express.Router();
 
@@ -11,26 +11,26 @@ module.exports = function(database, io) {
         res.render('rides', {  });
     });
 
+    router.get('/drive', (req, res) => {
+        res.render('drive', {});
+    });
+
     router.get('/login', (req, res, next) => {
         res.render('login', {});
     });
 
-    io.on('connection', (socket) => {
-        socket.on('newRide', (msg) => {
-            database.ref('rides/' + msg.userId).set({
-                name: msg.name,
-                location: msg.location,
-                destination: msg.destination
-            });
+    router.post('/tokensignin', (req, res) => {
+        //TODO: Verify ID token
+    });
+
+    router.post('/newride', (req, res) => {
+        database.ref('rides/' + req.userId).set({
+            name: req.name,
+            location: req.location,
+            // destination: req.destination
         });
     });
-    // router.post('/rides', (req, res) => {
-    //   database.ref('rides/' + req.userId).set({
-    //     name: req.name,
-    //     location: req.location,
-    //     destination: req.destination
-    //   });
-    // });
+
 
     return router;
 };
