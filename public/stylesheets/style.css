@@ -5,21 +5,31 @@
 body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
+
 @font-face {
   font-family: "Raleway";
   src: url("/fonts/Raleway-Regular.ttf");
 }
 
+@font-face {
+  font-family: "Raleway-Bold";
+  src: url("/fonts/Raleway-Bold.ttf");
+}
+
+@font-face {
+  font-family: "Raleway-Light";
+  src: url("/fonts/Raleway-Light.ttf");
+}
+
 .titles-home {
-  font-family: "Oswald", sans-serif;
+  font-family: "Raleway-Bold", sans-serif;
   font-size: 30px;
-  font-style: italic;
-  font-weight: bold;
-  text-indent: 80px;
   padding-top: 30px;
 }
-#pitch-tag1 {
-  padding-top: 81px;
+
+.descriptions {
+  font-family: "Raleway-Light";
+  font-size: 22px;
 }
 
 #ridesharing-redefined {
@@ -35,15 +45,17 @@ body {
   padding-top: 150px;
   /*padding-left: 250px; */
 }
+
 #pitch-tag2 {
   padding-bottom: 150px;
 }
 
-ul {
-  list-style-type: none;
+#title-bar {
   margin: 0;
-  padding-left: 50px;
+  flex-direction: row;
+  justify-content: space-between;
   overflow: hidden;
+  display: flex;
   background-color:#212121;
   left: 0;
   top: 0;
@@ -54,20 +66,30 @@ ul {
   box-shadow: 2px 2px 20px #000000;
 }
 
-li {
-  float: left;
-}
-
 #logo-link {
   margin: 10px;
 }
-#drive-link {
-  padding-right:787px;
+
+/*@media screen and (max-width: 600px) {*/
+  /*.nav-bar .nav-group:not(:first-child) {display: none;}*/
+/*}*/
+
+/*@media screen and (max-width: 600px) {*/
+  /*.nav-bar.responsive {position: relative;}*/
+  /*.nav-bar.responsive .icon {*/
+    /*position: absolute;*/
+    /*right: 0;*/
+    /*top: 0;*/
+  /*}*/
+/*}*/
+
+.nav-group {
+  flex-direction: row;
+  display: flex;
+  align-items: stretch;
 }
-#login-link {
-  padding-right:78px;
-}
-.active {
+
+.nav-link {
   font-size: 26px;
   display: block;
   text-align: center;
@@ -77,15 +99,10 @@ li {
   transition: background-color 0.2s ease-out;
 }
 
-.active:hover {
+.nav-link:hover {
   background-color:#607D8B;
 }
-#welcome {
-  padding-left: 500px;
-  border: 0;
-  margin: 0;
-  padding-bottom: 0;
-}
+
 #sign-up {
   padding-left: 1000px;
 }
@@ -93,25 +110,19 @@ li {
   padding-left: 250px;
   padding-right: 500px;
 }
-#credits {
-  padding-left: 600px;
-}
-.descriptions {
-  font-size: 22px;
-  text-indent: 80px;
 
+#welcome-messages {
+  margin-left: 20%;
+  margin-right: 20%;
 }
 
 #map {
   height: 400px;
 }
 
-a {
-  color: #00B7FF;
-}
 
 a.nav_tab{
-    color: #DFDB2D;
+  color: #DFDB2D;
 }
 
 button{
@@ -121,46 +132,46 @@ button{
 }
 
 div.drivers{
-    max-width: 500px;
-    padding : 10px;
-    background-color: rgba(140, 186, 250, 0.5);
+  max-width: 500px;
+  padding : 10px;
+  background-color: rgba(140, 186, 250, 0.5);
 }
 
 div.themed_background{
-    font-family: "Courier New";
-    background-image: url("/images/long-road.jpg");
-    padding : 20px;
-    height: 100%;
+  font-family: "Courier New";
+  background-image: url("/images/long-road.jpg");
+  padding : 20px;
+  height: 100%;
 }
 
 div.left_divider{
-    display: inline-block;
+  display: inline-block;
 }
 
 div.right_divider{
-    display: inline-block;
+  display: inline-block;
 }
 
 div.big_right_divider{
-    display: inline-block;
-    vertical-align: top;
+  display: inline-block;
+  vertical-align: top;
 }
 
 div.photo_divider{
-    display : inline-block;
-    width : 50px;
+  display : inline-block;
+  width : 50px;
 }
 
 div.text_box{
-    background-color: rgba(255,255,255,0.5);
-    padding: 10px;
+  background-color: rgba(255,255,255,0.5);
+  padding: 10px;
 }
 
 .content {
-    margin-top: 81px;
+  margin-top: 80px;
 }
 div.h-separators{
-    height : 5px;
+  height : 5px;
 }
 
 /* login CSS section */
@@ -192,6 +203,6 @@ div.h-separators{
   font-style: italic;
 }
 div.v-separators{
-    display: inline-block;
-    width : 100px;
+  display: inline-block;
+  width : 100px;
 }

@@ -3,6 +3,15 @@ var destinationMarker;
 
 var dest;
 
+function mobile() {
+    var x = document.getElementById("title-bar");
+    if (x.className === "nav-bar") {
+        x.className += " responsive";
+    } else {
+        x.className = "nav-bar";
+    }
+}
+
 function initMap() {
     map = new google.maps.Map(document.getElementById('map'), {
         center: {lat: 0, lng: 0},
@@ -112,20 +121,20 @@ function newRide(location, destination, seats) {
 function refreshRides() {
     console.log("Refreshed");
     var xmlhttp = new XMLHttpRequest();
-    xmlhttp.onreadystatechange = function() {
+    xmlhttp.onreadystatechange = () => {
         if (this.readyState == 4 && this.status == 200) {
             // Typical action to be performed when the document is ready:
             removeDriverDiv();
             var jsonObj = JSON.parse(xmlhttp.responseText);
+            console.log(jsonObj);
+            //loop through each element in the json object
             for (var key in jsonObj) {
                 if (jsonObj.hasOwnProperty(key)) {
                     console.log(jsonObj[key]);
-                    var driver = jsonObj[key];
+                    let driver = jsonObj[key];
                     buildDriverDiv(driver.name, driver.seats)
                 }
             }
-            // console.log(jsonObj.valueOf());
-
         }
     };
     xmlhttp.open("GET", '/update', true);

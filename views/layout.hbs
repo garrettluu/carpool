@@ -7,20 +7,26 @@
     <link rel='stylesheet' href='/stylesheets/style.css' />
 </head>
 <body>
-    <div id="header">
-      <ul id="title-bar">
-        <li id="company"><a class="active"href = "/"> Carpool </a> </li>
-        <li id="logo-link"><a href = "/"> <img src="/images/click-carpool.jpg" width="80px" > </a> </li>
-        <li id="rides-link"><a class = "active" href="/rides"> Rides </a> </li>
-        <li id="drive-link"><a class="active" href = "/drive"> Drive </a> </li>
-        <li id="signup-link"><a class="active" href = "/signup"> Sign Up </a> </li>
-        <li id="login-link"><a class="active" href = "/login"> Login </a> </li>
-        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-          <i class="fa fa-bars"></i>
-        </a>
-      </ul>
+<div id="header">
+    <div id="title-bar" class="nav-bar">
+            <div class="nav-group">
+                <a id="company" class="nav-link" href = "/"> Carpool </a>
+                <a id="logo-link" href="/"> <img src="/images/click-carpool.jpg" width="80px" > </a>
+                <a id="rides-link" class="nav-link" href="/rides"> Rides </a>
+                <a id="drive-link" class="nav-link" href = "/drive"> Drive </a>
+            </div>
+            <div class="nav-group">
+                <a id="signup-link" class="nav-link" href = "/signup"> Sign Up </a>
+                <a id="login-link" class="nav-link" href = "/login"> Login </a>
+            </div>
+        <!--<a href="javascript:void(0);" class="icon" onclick="mobile()">-->
+        <!--<i class="fa fa-bars"></i>-->
+        <!--</a>-->
     </div>
+</div>
+<div class="content">
     {{{body}}}
+</div>
 </body>
 
 <script src="https://www.gstatic.com/firebasejs/5.9.3/firebase.js"></script>
