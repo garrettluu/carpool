@@ -5,31 +5,32 @@
     <meta name="google-signin-client_id" content="769999411158-860rv1faqnpdtbc7p192b0189s4u8ia4.apps.googleusercontent.com">
     <title>{{title}}</title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
-    <style>
-    }
-    </style>
 </head>
 <body>
-    <div class="container">
-
-      <nav>
-        <ul id="title-bar">
-<!--          <li id="left side"><a href = "/"> Carpool </a> </li> TITLE CARPOOL REMOVED-->
-          <li><a href="/rides"> Rides </a> </li>
-          <li><a href = "/drive"> Drive </a> </li>
-          <li><a href = "/signup"> Sign<sub>_</sub>Up </a> </li>
-          <li><a href = "/login"> Login </a> </li>
-          <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-            <i class="fa fa-bars"></i>
-          </a>
-        </ul>
-      </nav>
-      </div>
+<div id="header">
+    <div id="title-bar" class="nav-bar">
+            <div class="nav-group">
+                <a id="company" class="nav-link" href = "/"> Carpool </a>
+                <a id="logo-link" href="/"> <img src="/images/click-carpool.jpg" width="80px" > </a>
+                <a id="rides-link" class="nav-link" href="/rides"> Rides </a>
+                <a id="drive-link" class="nav-link" href = "/drive"> Drive </a>
+            </div>
+            <div class="nav-group">
+                <a id="signup-link" class="nav-link" href = "/signup"> Sign Up </a>
+                <a id="login-link" class="nav-link" href = "/login"> Login </a>
+            </div>
+        <!--<a href="javascript:void(0);" class="icon" onclick="mobile()">-->
+        <!--<i class="fa fa-bars"></i>-->
+        <!--</a>-->
+    </div>
+</div>
+<div class="content">
     {{{body}}}
+</div>
 </body>
 
 <script src="https://www.gstatic.com/firebasejs/5.9.3/firebase.js"></script>
 <script src="javascripts/main.js"></script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA7FG1hRSae4eFALfLEMvjTd7v9wXGbn9A&callback=initMap&libraries=places"
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBqwQCpkCG0Eiesift3wJiypcfgAMFiXz0&callback=initMap&libraries=places"
         async defer></script>
 </html>

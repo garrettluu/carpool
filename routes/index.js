@@ -2,26 +2,24 @@ module.exports = function(database) {
     var express = require('express');
     var router = express.Router();
 
-    var ridesRef = database.ref('rides/');
-
     /* GET home page. */
-    router.get('/', function(req, res, next) {
+    router.get('/', (req, res) => {
         res.render('index', { title: 'Carpool: Rideshare Redefined' });
     });
 
-    router.get('/rides', function(req, res, next) {
-        res.render('rides', {  });
+    router.get('/rides', (req, res) => {
+        res.render('rides', {});
     });
 
     router.get('/drive', (req, res) => {
         res.render('drive', {});
     });
 
-    router.get('/carpool', function(req, res, next) {
-        res.render('carpool', {  });
+    router.get('/carpool', (req, res) => {
+        res.render('carpool', {});
     });
 
-    router.get('/login', (req, res, next) => {
+    router.get('/login', (req, res) => {
         res.render('login', {});
     });
 
@@ -30,20 +28,12 @@ module.exports = function(database) {
             console.log(snapshot.val());
             res.setHeader('Content-Type', 'application/json');
             res.send(JSON.stringify(snapshot.val()));
-            // for (driver in snapshot.val()) {
-            //     console.log(driver.valueOf());
-            // }
         });
     });
 
     router.post('/tokensignin', (req, res) => {
         //TODO: Verify ID token
     });
-// database.ref('rides/' + 'galuu').set({
-//     name: 'Garrett Luu',
-//     location: {lat: 100, long: 100},
-//             destination: req.destination
-// });
 
     router.post('/newride', (req, res) => {
         console.log("post request");
@@ -55,7 +45,6 @@ module.exports = function(database) {
         });
         res.send('Received POST');
     });
-
 
     return router;
 };
