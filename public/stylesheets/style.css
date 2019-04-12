@@ -8,16 +8,19 @@ body {
 
 @font-face {
   font-family: "Raleway";
+  /*noinspection CssUnknownTarget*/
   src: url("/fonts/Raleway-Regular.ttf");
 }
 
 @font-face {
   font-family: "Raleway-Bold";
+  /*noinspection CssUnknownTarget*/
   src: url("/fonts/Raleway-Bold.ttf");
 }
 
 @font-face {
   font-family: "Raleway-Light";
+  /*noinspection CssUnknownTarget*/
   src: url("/fonts/Raleway-Light.ttf");
 }
 
@@ -28,16 +31,17 @@ body {
 }
 
 .descriptions {
-  font-family: "Raleway-Light";
+  font-family: "Raleway-Light", sans-serif;
   font-size: 22px;
 }
 
 #ridesharing-redefined {
+  /*noinspection CssUnknownTarget*/
   background-image: linear-gradient(0deg, rgba(0,0,0,0.6), rgba(0,0,0,0.4)), url("/images/long-road.jpg");
   background-size: cover;
   background-position: center;
   font-size: 80px;
-  font-family: "Raleway";
+  font-family: "Raleway", sans-serif;
   text-shadow: 2px 2px 20px #000000;
   color:#FAFAFA;
   text-align: center;
@@ -62,7 +66,7 @@ body {
   width: 100%;
   position: fixed;
   z-index: 999;
-  font-family: "Raleway";
+  font-family: "Raleway", sans-serif;
   box-shadow: 2px 2px 20px #000000;
 }
 
@@ -131,61 +135,45 @@ button{
   color: navy;
 }
 
-div.drivers{
+#driver-container {
+  padding: 20px;
+}
+
+.driver {
   max-width: 500px;
-  padding : 10px;
-  background-color: rgba(140, 186, 250, 0.5);
-}
-
-div.themed_background{
-  font-family: "Courier New";
-  background-image: url("/images/long-road.jpg");
   padding : 20px;
-  height: 100%;
+  margin: 20px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
 }
 
-div.left_divider{
-  display: inline-block;
+.driver-name {
+  font-family: "Raleway-Bold", sans-serif;
 }
 
-div.right_divider{
-  display: inline-block;
+.driver-seats {
+  font-family: "Raleway", sans-serif;
 }
 
-div.big_right_divider{
-  display: inline-block;
-  vertical-align: top;
-}
-
-div.photo_divider{
-  display : inline-block;
-  width : 50px;
-}
-
-div.text_box{
-  background-color: rgba(255,255,255,0.5);
-  padding: 10px;
-}
+/*.themed_background{*/
+  /*font-family: "Courier New";*/
+  /*background-image: url("/images/long-road.jpg");*/
+  /*padding : 20px;*/
+  /*height: 100%;*/
+/*}*/
 
 .content {
   margin-top: 80px;
 }
-div.h-separators{
-  height : 5px;
-}
 
 /* login CSS section */
-
 .login-box{
-  font-family: "Raleway";
+  font-family: "Raleway", sans-serif;
   font-size: 36px;
   font-weight: bold;
   text-align: center;
-  border: 1px;
   width: 38%;
   margin: auto;
-  border-style: solid;
-  border-color: #BDBDBD;
+  border: 1px solid #BDBDBD;
   position: relative;
   top: 100px;
   padding-top: 50px;
@@ -193,16 +181,12 @@ div.h-separators{
   border-radius: 15px;
 }
 .g-signin2 {
-  margin: auto;
-  padding-left: 300px;
+  margin: 0 auto;
+  width: auto;
   padding-top: 50px;
+  padding-bottom: 50px;
 }
 .no-account {
-  padding-top: 50px;
   font-size: 20px;
   font-style: italic;
-}
-div.v-separators{
-  display: inline-block;
-  width : 100px;
 }
