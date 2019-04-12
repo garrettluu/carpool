@@ -73,10 +73,10 @@ function Location(lat, long) {
 
 function getLocationForMap() {
     if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition((position => {
+        navigator.geolocation.getCurrentPosition((position) => {
             var loc = new Location(position.coords.latitude, position.coords.longitude);
             updateMap(loc)
-        }))
+        })
     }
 }
 
@@ -97,9 +97,9 @@ function getLocationForRide() {
 function onSignIn(googleUser) {
     var id_token = googleUser.getAuthResponse().id_token;
     var xhr = new XMLHttpRequest();
-    xhr.open('POST', 'https://localhost:3000/tokensignin');
+    xhr.open('POST', '/tokensignin', true);
     xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-    xhr.onload = function() {
+    xhr.onload = () => {
         console.log('Signed in as: ' + xhr.responseText);
     };
     xhr.send('idtoken=' + id_token);
@@ -110,8 +110,8 @@ function newRide(location, destination, seats) {
     xmlhttp.open("POST", '/newride', true);
     xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
     xmlhttp.send(JSON.stringify({
-        "userId": "twonder",
-        "name": "Tracker Wonderdog",
+        "userId": "galuu",
+        "name": "Garrett Luu",
         "location": location,
         "destination": destination,
         "seats": seats
@@ -122,15 +122,17 @@ function refreshRides() {
     console.log("Refreshed");
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = () => {
-        if (this.readyState == 4 && this.status == 200) {
+        if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
             // Typical action to be performed when the document is ready:
+            console.log(xmlhttp.responseText);
             removeDriverDiv();
-            var jsonObj = JSON.parse(xmlhttp.responseText);
-            console.log(jsonObj);
+            let jsonObj = JSON.parse(xmlhttp.responseText);
+            // let jsonObj = xmlhttp.responseText;
+            // console.log(jsonObj);
             //loop through each element in the json object
-            for (var key in jsonObj) {
+            for (let key in jsonObj) {
                 if (jsonObj.hasOwnProperty(key)) {
-                    console.log(jsonObj[key]);
+                    // console.log(jsonObj[key]);
                     let driver = jsonObj[key];
                     buildDriverDiv(driver.name, driver.seats)
                 }
@@ -143,27 +145,24 @@ function refreshRides() {
 
 function buildDriverDiv(name, seats) {
     //Create outer div
-    var outerDiv = document.createElement('div');
-    outerDiv.className = 'drivers';
+    let outerDiv = document.createElement('div');
+    outerDiv.className = 'driver';
     //Append to container
     document.getElementById('driver-container').appendChild(outerDiv);
 
-    var driverData = document.createElement('div');
-    driverData.className = 'left_divider';
-
-    outerDiv.appendChild(driverData);
-
-    var nameText = document.createElement('h3');
+    let nameText = document.createElement('p');
+    nameText.classList.add('driver-name');
     nameText.innerText = name;
-    driverData.appendChild(nameText);
+    outerDiv.appendChild(nameText);
 
-    var seatsText = document.createElement('p');
+    let seatsText = document.createElement('p');
+    seatsText.classList.add('driver-seats');
     seatsText.innerText = "Remaining Seats: " + seats;
-    driverData.appendChild(seatsText);
+    outerDiv.appendChild(seatsText);
 
-    var reserveButton = document.createElement('button');
-    reserveButton.innerText = "Reserve";
-    driverData.appendChild(reserveButton);
+    // let reserveButton = document.createElement('button');
+    // reserveButton.innerText = "Reserve";
+    // driverData.appendChild(reserveButton);
 }
 
 function removeDriverDiv() {
