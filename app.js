@@ -33,7 +33,6 @@ app.use(express.json());
 var indexRouter = require('./routes/index')(database);
 var usersRouter = require('./routes/users');
 
-
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');

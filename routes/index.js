@@ -1,6 +1,10 @@
 module.exports = function(database) {
-    var express = require('express');
-    var router = express.Router();
+    //Express routing
+    let express = require('express');
+    let router = express.Router();
+
+    //Google sign-in authorization
+    const {OAuth2Client} = require('google-auth-library');
 
     /* GET home page. */
     router.get('/', (req, res) => {
@@ -8,6 +12,7 @@ module.exports = function(database) {
     });
 
     router.get('/rides', (req, res) => {
+        
         res.render('rides', {});
     });
 
@@ -25,9 +30,8 @@ module.exports = function(database) {
 
     router.get('/update', (req, res) => {
         database.ref('rides/').on('value', (snapshot) => {
-            console.log(snapshot.val());
             res.setHeader('Content-Type', 'application/json');
-            res.send(JSON.stringify(snapshot.val()));
+            res.send(snapshot.val());
         });
     });
 
@@ -48,4 +52,3 @@ module.exports = function(database) {
 
     return router;
 };
-
