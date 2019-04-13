@@ -1,14 +1,13 @@
-var createError = require('http-errors');
-var express = require('express');
-var bodyParser = require('body-parser');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
+const createError = require('http-errors');
+const express = require('express');
+const path = require('path');
+const cookieParser = require('cookie-parser');
+const logger = require('morgan');
 
 
 //Initialize Firebase
-let firebase = require('firebase');
-var config = {
+const firebase = require('firebase');
+const config = {
     apiKey: "AIzaSyBxvyLamhcTZczjtobRuYFIE6RahuIV-mg",
     authDomain: "carpool-1554591126344.firebaseapp.com",
     databaseURL: "https://carpool-1554591126344.firebaseio.com",
@@ -21,17 +20,13 @@ firebase.initializeApp(config);
 
 
 let database = firebase.database();
-// database.ref('rides/' + 'galuu').set({
-//             name: 'Garrett Luu',
-//             location: {lat: 100, long: 100},
-//             destination: req.destination
-        // });
+
 let app = express();
 app.use(express.json());
 
 //Pass database to router
-var indexRouter = require('./routes/index')(database);
-var usersRouter = require('./routes/users');
+let indexRouter = require('./routes/index')(database);
+let usersRouter = require('./routes/users');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -52,7 +47,7 @@ app.use(function(req, res, next) {
 });
 
 // error handler
-app.use(function(err, req, res, next) {
+app.use(function(err, req, res) {
     // set locals, only providing error in development
     res.locals.message = err.message;
     res.locals.error = req.app.get('env') === 'development' ? err : {};
