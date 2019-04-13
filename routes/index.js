@@ -29,8 +29,8 @@ module.exports = function(database) {
     });
 
     router.get('/update', (req, res) => {
+        res.setHeader('Content-Type', 'application/json');
         database.ref('rides/').on('value', (snapshot) => {
-            res.setHeader('Content-Type', 'application/json');
             res.send(snapshot.val());
         });
     });
