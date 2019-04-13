@@ -19,6 +19,12 @@ body {
 }
 
 @font-face {
+  font-family: "Raleway-SemiBold";
+  /*noinspection CssUnknownTarget*/
+  src: url("/fonts/Raleway-SemiBold.ttf");
+}
+
+@font-face {
   font-family: "Raleway-Light";
   /*noinspection CssUnknownTarget*/
   src: url("/fonts/Raleway-Light.ttf");
@@ -125,14 +131,20 @@ body {
 }
 
 
-a.nav_tab{
+.nav_tab{
   color: #DFDB2D;
 }
 
-button{
-  border-color: #ABB6D9;
-  background-color: linen;
-  color: navy;
+.material-button {
+  padding: 8px 16px;
+  font-family: "Raleway-SemiBold", sans-serif;
+  font-size: 14px;
+  color: #F5F5F5;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2), 0 2px 5px 0 rgba(0, 0, 0, 0.19);
+  text-transform: uppercase;
+  background:#212121;
+  border: none;
+  border-radius: 4px;
 }
 
 #driver-container {

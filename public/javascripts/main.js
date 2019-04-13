@@ -127,18 +127,18 @@ function refreshRides() {
             console.log(xmlhttp.responseText);
             removeDriverDiv();
             let jsonObj = JSON.parse(xmlhttp.responseText);
-            // let jsonObj = xmlhttp.responseText;
-            // console.log(jsonObj);
             //loop through each element in the json object
             for (let key in jsonObj) {
+                //Check if the key exists in json
                 if (jsonObj.hasOwnProperty(key)) {
-                    // console.log(jsonObj[key]);
                     let driver = jsonObj[key];
+                    //build a div for each driver
                     buildDriverDiv(driver.name, driver.seats)
                 }
             }
         }
     };
+    //Send GET request to update
     xmlhttp.open("GET", '/update', true);
     xmlhttp.send();
 }
@@ -150,19 +150,23 @@ function buildDriverDiv(name, seats) {
     //Append to container
     document.getElementById('driver-container').appendChild(outerDiv);
 
+    //Name of driver
     let nameText = document.createElement('p');
     nameText.classList.add('driver-name');
     nameText.innerText = name;
     outerDiv.appendChild(nameText);
 
+    //Seats left
     let seatsText = document.createElement('p');
     seatsText.classList.add('driver-seats');
     seatsText.innerText = "Remaining Seats: " + seats;
     outerDiv.appendChild(seatsText);
 
-    // let reserveButton = document.createElement('button');
-    // reserveButton.innerText = "Reserve";
-    // driverData.appendChild(reserveButton);
+    let reserveButton = document.createElement('button');
+    reserveButton.classList.add('material-button');
+    reserveButton.innerText = "Reserve";
+    outerDiv.appendChild(reserveButton);
+
 }
 
 function removeDriverDiv() {
