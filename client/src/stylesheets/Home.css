@@ -1,17 +1,19 @@
 .titles-home {
   font-family: "Raleway-Bold", sans-serif;
-  font-size: 30px;
+  font-size: 40px;
   padding-top: 30px;
+  padding-bottom: 20px;
 }
 
 .descriptions {
   font-family: "Raleway-Light", sans-serif;
   font-size: 22px;
+  line-height: 1.5;
 }
 
 #ridesharing-redefined {
   /*noinspection CssUnknownTarget*/
-  background-image: linear-gradient(0deg, rgba(0,0,0,0.6), rgba(0,0,0,0.4)), url("./images/long-road.jpg");
+  background-image: linear-gradient(0deg, rgba(0,0,0,0.6), rgba(0,0,0,0.4)), url("../images/long-road.jpg");
   background-size: cover;
   background-position: center;
   font-size: 80px;
@@ -19,7 +21,8 @@
   text-shadow: 2px 2px 20px #000000;
   color:#FAFAFA;
   text-align: center;
-
+  position: relative;
+  z-index: 1;
   padding-top: 150px;
   /*padding-left: 250px; */
 }
@@ -29,6 +32,11 @@
 }
 
 #welcome-messages {
-  margin-left: 20%;
-  margin-right: 20%;
+  padding-left: 20%;
+  padding-right: 20%;
+  padding-bottom: 50px;
+  position: relative;
+  z-index: 3;
+  background-color: white;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
 }
