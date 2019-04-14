@@ -1,33 +1,71 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+@font-face {
+  font-family: "Raleway";
+  /*noinspection CssUnknownTarget*/
+  src: url("/fonts/Raleway-Regular.ttf");
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+@font-face {
+  font-family: "Raleway-Bold";
+  /*noinspection CssUnknownTarget*/
+  src: url("/fonts/Raleway-Bold.ttf");
+}
+
+@font-face {
+  font-family: "Raleway-SemiBold";
+  /*noinspection CssUnknownTarget*/
+  src: url("/fonts/Raleway-SemiBold.ttf");
+}
+
+@font-face {
+  font-family: "Raleway-Light";
+  /*noinspection CssUnknownTarget*/
+  src: url("/fonts/Raleway-Light.ttf");
+}
+
+#title-bar {
+  margin: 0;
+  flex-direction: row;
+  justify-content: space-between;
+  overflow: hidden;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  background-color:#212121;
+  left: 0;
+  top: 0;
+  width: 100%;
+  position: fixed;
+  z-index: 999;
+  font-family: "Raleway", sans-serif;
+  box-shadow: 2px 2px 20px #000000;
 }
 
-.App-link {
-  color: #61dafb;
+#logo-link {
+  margin: 10px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.nav-group {
+  flex-direction: row;
+  display: flex;
+  align-items: stretch;
+}
+
+.nav-link {
+  font-size: 26px;
+  display: block;
+  text-align: center;
+  padding: 25px 50px;
+  text-decoration: none;
+  color:#F5F5F5;
+  transition: background-color 0.2s ease-out;
+}
+
+.nav-link:hover {
+  background-color:#607D8B;
+}
+
+.content {
+  margin-top: 80px;
 }
