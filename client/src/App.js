@@ -1,32 +1,43 @@
+//React import
 import React, { Component } from 'react';
-import logo from './logo.svg';
+
+//Routing
+import {Route, NavLink, BrowserRouter} from "react-router-dom";
+import Home from './Home';
+
+//CSS stuff
+import logo from './images/sports-car.svg';
 import './App.css';
 
 class App extends Component {
     render() {
         return (
             <div className="App">
-                <div id="header">
-                    <div id="title-bar" class="nav-bar">
-                        <div class="nav-group">
-                            <a id="company" class="nav-link" href = "/"> Carpool </a>
-                            <a id="logo-link" href="/">
-                                <img src="./images/sports-car.svg" height="60px" >
-                                </img>
-                            </a>
-                            <a id="rides-link" class="nav-link" href="/rides"> Rides </a>
-                            <a id="drive-link" class="nav-link" href = "/drive"> Drive </a>
-                        </div>
-                        <div class="nav-group">
-                            <a id="signup-link" class="nav-link" href = "/signup"> Sign Up </a>
-                            <a id="login-link" class="nav-link" href = "/login"> Login </a>
+                <BrowserRouter>
+                    <div id="header">
+                        <div id="title-bar" className="nav-bar">
+                            <div className="nav-group">
+                                <NavLink id="company" className="nav-link" to="/"> Carpool </NavLink>
+                             i  <NavLink id="logo-link" to="/">
+                                    <img src={logo} height="60px" alt="logo">
+                                    </img>
+                                </NavLink>
+                                <NavLink id="rides-link" className="nav-link" to="/rides"> Rides </NavLink>
+                                <NavLink id="drive-link" className="nav-link" to="/drive"> Drive </NavLink>
+                            </div>
+                            <div class="nav-group">
+                                <NavLink id="signup-link" className="nav-link" to="/signup"> Sign Up </NavLink>
+                                <NavLink id="login-link" className="nav-link" to="/login"> Login </NavLink>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div className="content">
-                </div>
-            </div>);
-        }
+                    <div className="content">
+                        <Route exact path="/" component={Home}/>
+                    </div>
+                </BrowserRouter>
+            </div>
+        );
     }
+}
 
-    export default App;
+export default App;

@@ -1,0 +1,34 @@
+.titles-home {
+  font-family: "Raleway-Bold", sans-serif;
+  font-size: 30px;
+  padding-top: 30px;
+}
+
+.descriptions {
+  font-family: "Raleway-Light", sans-serif;
+  font-size: 22px;
+}
+
+#ridesharing-redefined {
+  /*noinspection CssUnknownTarget*/
+  background-image: linear-gradient(0deg, rgba(0,0,0,0.6), rgba(0,0,0,0.4)), url("./images/long-road.jpg");
+  background-size: cover;
+  background-position: center;
+  font-size: 80px;
+  font-family: "Raleway", sans-serif;
+  text-shadow: 2px 2px 20px #000000;
+  color:#FAFAFA;
+  text-align: center;
+
+  padding-top: 150px;
+  /*padding-left: 250px; */
+}
+
+#pitch-tag2 {
+  padding-bottom: 150px;
+}
+
+#welcome-messages {
+  margin-left: 20%;
+  margin-right: 20%;
+}
