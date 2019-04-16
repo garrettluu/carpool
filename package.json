@@ -6,8 +6,9 @@
     "start": "node ./bin/www"
   },
   "dependencies": {
-    "@material/button": "^1.1.0",
+    "body-parser": "latest",
     "cookie-parser": "~1.4.3",
+    "cors": "^2.8.5",
     "debug": "~2.6.9",
     "express": "~4.16.0",
     "firebase": "^5.9.3",
