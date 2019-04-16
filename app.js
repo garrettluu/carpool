@@ -3,6 +3,7 @@ const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
+var cors = require('cors');
 
 
 //Initialize Firebase
@@ -22,6 +23,7 @@ firebase.initializeApp(config);
 let database = firebase.database();
 
 let app = express();
+app.use(cors());
 app.use(express.json());
 
 //Pass database to router
@@ -29,8 +31,8 @@ let indexRouter = require('./routes/index')(database);
 let usersRouter = require('./routes/users');
 
 // view engine setup
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'hbs');
+// app.set('views', path.join(__dirname, 'views'));
+// app.set('view engine', 'hbs');
 
 app.use(logger('dev'));
 app.use(express.json());
