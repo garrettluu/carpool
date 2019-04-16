@@ -3,12 +3,6 @@ import { Parallax } from 'react-scroll-parallax';
 
 import './stylesheets/Home.css';
 
-const ParallaxImage = () => (
-    <Parallax y={[-50, 25]}>
-        <img src="./images/long-road.jpg"/>
-    </Parallax>
-);
-
 class Home extends Component {
     render() {
         return (
