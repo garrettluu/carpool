@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import DriverCard from './components/DriverCard';
 import axios from 'axios';
 
+import './stylesheets/Rides.css';
+
 class Rides extends Component {
 
     constructor(props) {
