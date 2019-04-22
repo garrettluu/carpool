@@ -14,7 +14,7 @@ class DriverCard extends Component {
                     {this.name}
                 </p>
                 <p className="driver-seats">
-                    {this.seats}
+                    Seats Available: {this.seats}
                 </p>
                 <button className="material-button">
                     Reserve
