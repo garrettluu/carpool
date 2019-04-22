@@ -7,7 +7,7 @@ class Home extends Component {
     render() {
         return (
             <div className="Home">
-                <Parallax y={[-100, 64]}>
+                <Parallax y={[-40, 26]}>
                     <div id="ridesharing-redefined">
                         <p id="pitch-tag1">Ridesharing.</p>
                         <p id="pitch-tag2">Redefined.</p>
