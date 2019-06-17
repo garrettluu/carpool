@@ -10,6 +10,7 @@ class DriverCard extends Component {
     render() {
         return (
             <div className="DriverCard driver">
+
                 <p className="driver-name">
                     {this.name}
                 </p>

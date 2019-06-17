@@ -6,6 +6,7 @@
     "start": "concurrently \"node ./bin/www\" \"cd ./client && npm start\""
   },
   "dependencies": {
+    "@react-google-maps/api": "^1.3.0",
     "body-parser": "latest",
     "concurrently": "^4.1.0",
     "cookie-parser": "~1.4.3",

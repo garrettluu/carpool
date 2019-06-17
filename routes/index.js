@@ -12,7 +12,6 @@ module.exports = function(database) {
     });
 
     router.get('/rides', (req, res) => {
-        
         res.render('rides', {});
     });
 
