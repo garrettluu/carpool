@@ -3,11 +3,14 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "concurrently \"node ./bin/www\" \"cd ./client && npm start\""
   },
   "dependencies": {
-    "@material/button": "^1.1.0",
+    "@react-google-maps/api": "^1.3.0",
+    "body-parser": "latest",
+    "concurrently": "^4.1.0",
     "cookie-parser": "~1.4.3",
+    "cors": "^2.8.5",
     "debug": "~2.6.9",
     "express": "~4.16.0",
     "firebase": "^5.9.3",
