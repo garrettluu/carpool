@@ -4,12 +4,13 @@ import {Map, GoogleApiWrapper} from 'google-maps-react';
 class MapContainer extends Component {
     render() {
         const style = {
-            width: '100%',
-            height: '100%'
+            height: '500px',
+            width: '100%'
         };
         return(
             <div style={style}>
-                <Map google={this.props.google} />
+                <Map google={this.props.google}
+                     style={style}/>
             </div>
         )
     }
