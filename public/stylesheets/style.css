@@ -1,52 +1,105 @@
-body {
+* {
   margin: 0;
+  /*<!-- font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; -->*/
+}
+body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
+@font-face {
+  font-family: "Raleway";
+  /*noinspection CssUnknownTarget*/
+  src: url("/fonts/Raleway-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Raleway-Bold";
+  /*noinspection CssUnknownTarget*/
+  src: url("/fonts/Raleway-Bold.ttf");
+}
+
+@font-face {
+  font-family: "Raleway-SemiBold";
+  /*noinspection CssUnknownTarget*/
+  src: url("/fonts/Raleway-SemiBold.ttf");
+}
+
+@font-face {
+  font-family: "Raleway-Light";
+  /*noinspection CssUnknownTarget*/
+  src: url("/fonts/Raleway-Light.ttf");
+}
+
 .titles-home {
-  font-family: "Oswald", sans-serif;
+  font-family: "Raleway-Bold", sans-serif;
   font-size: 30px;
-  font-style: italic;
-  font-weight: bold;
-  text-indent: 80px;
   padding-top: 30px;
 }
-#pitch-tag1 {
-  padding-top: 81px;
+
+.descriptions {
+  font-family: "Raleway-Light", sans-serif;
+  font-size: 22px;
 }
 
 #ridesharing-redefined {
-  background-image: url("/images/long-road.jpg");
+  /*noinspection CssUnknownTarget*/
+  background-image: linear-gradient(0deg, rgba(0,0,0,0.6), rgba(0,0,0,0.4)), url("/images/long-road.jpg");
+  background-size: cover;
+  background-position: center;
   font-size: 80px;
-  padding-left: 200px;
+  font-family: "Raleway", sans-serif;
+  text-shadow: 2px 2px 20px #000000;
+  color:#FAFAFA;
+  text-align: center;
+
+  padding-top: 150px;
+  /*padding-left: 250px; */
 }
 
-ul {
-  list-style-type: none;
+#pitch-tag2 {
+  padding-bottom: 150px;
+}
+
+#title-bar {
   margin: 0;
-  padding-left: 50px;
+  flex-direction: row;
+  justify-content: space-between;
   overflow: hidden;
+  display: flex;
   background-color:#212121;
-  position: fixed;
-  top: 0;
   left: 0;
+  top: 0;
+  width: 100%;
+  position: fixed;
   z-index: 999;
-}
-
-li {
-  float: left;
+  font-family: "Raleway", sans-serif;
+  box-shadow: 2px 2px 20px #000000;
 }
 
 #logo-link {
   margin: 10px;
 }
-#drive-link {
-  padding-right:800px;
+
+/*@media screen and (max-width: 600px) {*/
+  /*.nav-bar .nav-group:not(:first-child) {display: none;}*/
+/*}*/
+
+/*@media screen and (max-width: 600px) {*/
+  /*.nav-bar.responsive {position: relative;}*/
+  /*.nav-bar.responsive .icon {*/
+    /*position: absolute;*/
+    /*right: 0;*/
+    /*top: 0;*/
+  /*}*/
+/*}*/
+
+.nav-group {
+  flex-direction: row;
+  display: flex;
+  align-items: stretch;
 }
-#login-link {
-  padding-right:78px;
-}
-.active {
+
+.nav-link {
   font-size: 26px;
   display: block;
   text-align: center;
@@ -56,15 +109,10 @@ li {
   transition: background-color 0.2s ease-out;
 }
 
-.active:hover {
+.nav-link:hover {
   background-color:#607D8B;
 }
-#welcome {
-  padding-left: 500px;
-  border: 0;
-  margin: 0;
-  padding-bottom: 0;
-}
+
 #sign-up {
   padding-left: 1000px;
 }
@@ -72,70 +120,93 @@ li {
   padding-left: 250px;
   padding-right: 500px;
 }
-#credits {
-  padding-left: 600px;
-}
-.descriptions {
-  font-size: 22px;
-  text-indent: 80px;
 
+#welcome-messages {
+  margin-left: 20%;
+  margin-right: 20%;
 }
 
-a {
-  color: #00B7FF;
+#map {
+  height: 400px;
 }
 
-a.nav_tab{
-    color: #DFDB2D;
+
+.nav_tab{
+  color: #DFDB2D;
 }
 
-button{
-  border-color: #ABB6D9;
-  background-color: linen;
-  color: navy;
+.material-button {
+  padding: 8px 16px;
+  font-family: "Raleway-SemiBold", sans-serif;
+  font-size: 14px;
+  color: #F5F5F5;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2), 0 2px 5px 0 rgba(0, 0, 0, 0.19);
+  text-transform: uppercase;
+  background:#212121;
+  border: none;
+  border-radius: 4px;
 }
 
-div.drivers{
-    max-width: 500px;
-    padding : 10px;
-    background-color: rgba(140, 186, 250, 0.5);
-}
-
+<<<<<<< HEAD
 div.themed_background{
     font-family: "Raleway";
     background-image: url("/images/long-road.jpg");
     padding : 20px;
     height: 100%;
+=======
+#driver-container {
+  padding: 20px;
+>>>>>>> origin/master
 }
 
-div.left_divider{
-    display: inline-block;
+.driver {
+  max-width: 500px;
+  padding : 20px;
+  margin: 20px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
 }
 
-div.right_divider{
-    display: inline-block;
+.driver-name {
+  font-family: "Raleway-Bold", sans-serif;
 }
 
-div.big_right_divider{
-    display: inline-block;
-    vertical-align: top;
+.driver-seats {
+  font-family: "Raleway", sans-serif;
 }
 
-div.photo_divider{
-    display : inline-block;
-    width : 50px;
+/*.themed_background{*/
+  /*font-family: "Courier New";*/
+  /*background-image: url("/images/long-road.jpg");*/
+  /*padding : 20px;*/
+  /*height: 100%;*/
+/*}*/
+
+.content {
+  margin-top: 80px;
 }
 
-div.text_box{
-    background-color: rgba(255,255,255,0.5);
-    padding: 10px;
+/* login CSS section */
+.login-box{
+  font-family: "Raleway", sans-serif;
+  font-size: 36px;
+  font-weight: bold;
+  text-align: center;
+  width: 38%;
+  margin: auto;
+  border: 1px solid #BDBDBD;
+  position: relative;
+  top: 100px;
+  padding-top: 50px;
+  padding-bottom: 100px;
+  border-radius: 15px;
 }
-
-div.h-separators{
-    height : 5px;
+.g-signin2 {
+  margin: 0 auto;
+  width: auto;
+  padding-top: 50px;
+  padding-bottom: 50px;
 }
-
-div.v-separators{
-    display: inline-block;
-    width : 100px;
+.no-account {
+  font-size: 20px;
+  font-style: italic;
 }

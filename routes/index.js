@@ -1,40 +1,53 @@
-module.exports = function(database, io) {
-    var express = require('express');
-    var router = express.Router();
+module.exports = function(database) {
+    //Express routing
+    let express = require('express');
+    let router = express.Router();
+
+    //Google sign-in authorization
+    const {OAuth2Client} = require('google-auth-library');
 
     /* GET home page. */
-    router.get('/', function(req, res, next) {
+    router.get('/', (req, res) => {
         res.render('index', { title: 'Carpool: Rideshare Redefined' });
     });
 
-    router.get('/rides', function(req, res, next) {
-        res.render('rides', {  });
+    router.get('/rides', (req, res) => {
+        res.render('rides', {});
     });
 
-    router.get('/carpool', function(req, res, next) {
-        res.render('carpool', {  });
+    router.get('/drive', (req, res) => {
+        res.render('drive', {});
     });
 
-    router.get('/login', (req, res, next) => {
+    router.get('/carpool', (req, res) => {
+        res.render('carpool', {});
+    });
+
+    router.get('/login', (req, res) => {
         res.render('login', {});
     });
 
-    io.on('connection', (socket) => {
-        socket.on('newRide', (msg) => {
-            database.ref('rides/' + msg.userId).set({
-                name: msg.name,
-                location: msg.location,
-                destination: msg.destination
-            });
+    router.get('/update', (req, res) => {
+        res.setHeader('Content-Type', 'application/json');
+        database.ref('rides/').on('value', (snapshot) => {
+            res.send(snapshot.val());
         });
     });
-    // router.post('/rides', (req, res) => {
-    //   database.ref('rides/' + req.userId).set({
-    //     name: req.name,
-    //     location: req.location,
-    //     destination: req.destination
-    //   });
-    // });
+
+    router.post('/tokensignin', (req, res) => {
+        //TODO: Verify ID token
+    });
+
+    router.post('/newride', (req, res) => {
+        console.log("post request");
+        database.ref('rides/' + req.body.userId).set({
+            name: req.body.name,
+            location: req.body.location,
+            destination: req.body.destination,
+            seats: req.body.seats
+        });
+        res.send('Received POST');
+    });
 
     return router;
 };

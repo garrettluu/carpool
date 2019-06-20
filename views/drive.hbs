@@ -1,0 +1,13 @@
+<div class="content">
+    <div id="map"></div>
+    <p> Destination: </p>
+    <input type="text" id="dest">
+    <button onclick="searchPlace()">Search</button>
+
+    <p> Available Seats: </p>
+    <input type="number" id="seats-num">
+    <button onclick="getLocationForRide()">New Ride</button>
+</div>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBqwQCpkCG0Eiesift3wJiypcfgAMFiXz0&callback=initMap&libraries=places"
+        async defer></script>

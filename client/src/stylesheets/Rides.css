@@ -1,0 +1,31 @@
+#driver-container {
+    padding: 20px;
+}
+
+.driver {
+  max-width: 500px;
+  padding : 20px;
+  margin: 20px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+}
+
+.driver-name {
+  font-family: "Raleway-Bold", sans-serif;
+}
+
+.driver-seats {
+  font-family: "Raleway", sans-serif;
+}
+
+.material-button {
+  padding: 8px 16px;
+  font-family: "Raleway-SemiBold", sans-serif;
+  font-size: 14px;
+  color: #F5F5F5;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2), 0 2px 5px 0 rgba(0, 0, 0, 0.19);
+  text-transform: uppercase;
+  background:#212121;
+  border: none;
+  border-radius: 4px;
+}
+
