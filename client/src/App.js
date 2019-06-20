@@ -5,6 +5,7 @@ import React, { Component } from 'react';
 import {Route, NavLink, BrowserRouter} from "react-router-dom";
 import Home from './Home';
 import Rides from './Rides';
+import Drive from './Drive';
 
 //CSS stuff
 import logo from './images/sports-car.svg';
@@ -39,6 +40,7 @@ class App extends Component {
                         <div className="content">
                             <Route exact path="/" component={Home}/>
                             <Route exact path="/rides" component={Rides}/>
+                            <Route exact path="/drive" component={Drive}/>
                         </div>
                     </BrowserRouter>
                 </div>
