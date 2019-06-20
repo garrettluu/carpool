@@ -1,20 +1,20 @@
 import React, { Component } from 'react';
-import Map from './Map.js'
+import {Map, GoogleApiWrapper} from 'google-maps-react';
 
 class MapContainer extends Component {
     render() {
         const style = {
-            width: '100vw',
-            height: '100vh'
+            width: '100%',
+            height: '100%'
         };
         return(
-            <div>
+            <div style={style}>
                 <Map google={this.props.google} />
             </div>
         )
     }
 }
 
-export default GoogleApiComponent({
-    apiKey: "AIzaSyBqwQCpkCG0Eiesift3wJiypcfgAMFiXz0"
+export default GoogleApiWrapper({
+    apiKey: ("AIzaSyBqwQCpkCG0Eiesift3wJiypcfgAMFiXz0")
 })(MapContainer)
