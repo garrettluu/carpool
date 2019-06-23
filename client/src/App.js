@@ -21,6 +21,8 @@ class App extends Component {
                 <div className="App">
                     <BrowserRouter>
                         <div id="header">
+
+                            {/* Renders Navigation bar */}
                             <div id="title-bar" className="nav-bar">
                                 <div className="nav-group">
                                     <NavLink id="company" className="nav-link" to="/"> Carpool </NavLink>
@@ -37,6 +39,8 @@ class App extends Component {
                                 </div>
                             </div>
                         </div>
+
+                        {/* Specifies which page to navigate to with each path */}
                         <div className="content">
                             <Route exact path="/" component={Home}/>
                             <Route exact path="/rides" component={Rides}/>

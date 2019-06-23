@@ -8,10 +8,12 @@ class Drive extends Component {
       <div className="Drive">
           <MapContainer/>
 
+        {/* Destination */}
         <p> Destination: </p>
         <input type="text" id="dest"/>
         <button onclick="searchPlace()">Search</button>
 
+        {/* Available seats */}
         <p> Available Seats: </p>
         <input type="number" id="seats-num"/>
         <button onclick="getLocationForRide()">New Ride</button>

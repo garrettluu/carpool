@@ -6,14 +6,19 @@ import './stylesheets/Home.css';
 class Home extends Component {
     render() {
         return (
+            /* Large division containing the entire page */
             <div className="Home">
                 <Parallax y={[-40, 26]}>
+                    {/* Title division */}
                     <div id="ridesharing-redefined">
                         <p id="pitch-tag1">Ridesharing.</p>
                         <p id="pitch-tag2">Redefined.</p>
                     </div>
                 </Parallax>
+                {/* Other introduction messages */}
                 <div id="welcome-messages">
+
+                    {/* Intro Paragraph 1 */}
                     <div className="welcome-message">
                         <h3 className="titles-home" id="introduction">
                             The fastest way to get a ride.
@@ -25,6 +30,7 @@ class Home extends Component {
                         </p>
                     </div>
 
+                    {/* Intro Paragraph 2 */}
                     <div className="welcome-message">
                         <h3 className="titles-home">
                             Decentralized driving.
@@ -36,6 +42,7 @@ class Home extends Component {
                         </p>
                     </div>
 
+                    {/* Intro Paragraph 3 */}
                     <div className="welcome-message">
                         <h3 className="titles-home">
                             Earn credits by driving.
