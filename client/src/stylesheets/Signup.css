@@ -53,6 +53,17 @@
     padding-bottom: 10px;
 }
 
+/* Highlights the input box when hovered */
+.signup-input:hover{
+    width: 50%;
+    outline-width: 0px;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #8CBFD9;
+    padding-bottom: 10px;
+}
+
+/* Highlights the input box when selected */
 .signup-input:focus{
     width: 50%;
     outline-width: 0px;
@@ -62,18 +73,22 @@
     padding-bottom: 10px;
 }
 
+/* Creates extra spacing on bottom of each line */
 .signup-right-text{
     padding-bottom: 30px;
 }
 
+/* Customizes link default color */
 #login-link{
     color: #66aacc;
 }
 
+/* Changes link color when hovered */
 #login-link:hover{
     color: #8CBFD9;
 }
 
+/* Fades the text because the functionality is coming soon :( I need help */
 #coming-soon{
     color: #AAAAAA;
 }
