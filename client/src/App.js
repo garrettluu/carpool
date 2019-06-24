@@ -6,6 +6,7 @@ import {Route, NavLink, BrowserRouter} from "react-router-dom";
 import Home from './Home';
 import Rides from './Rides';
 import Drive from './Drive';
+import Signup from './Signup';
 
 //CSS stuff
 import logo from './images/sports-car.svg';
@@ -45,6 +46,7 @@ class App extends Component {
                             <Route exact path="/" component={Home}/>
                             <Route exact path="/rides" component={Rides}/>
                             <Route exact path="/drive" component={Drive}/>
+                            <Route exact path="/signup" component={Signup}/>
                         </div>
                     </BrowserRouter>
                 </div>
