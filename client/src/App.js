@@ -6,6 +6,7 @@ import {Route, NavLink, BrowserRouter} from "react-router-dom";
 import Home from './Home';
 import Rides from './Rides';
 import Drive from './Drive';
+import Signup from './Signup';
 
 //CSS stuff
 import logo from './images/sports-car.svg';
@@ -21,6 +22,8 @@ class App extends Component {
                 <div className="App">
                     <BrowserRouter>
                         <div id="header">
+
+                            {/* Renders Navigation bar */}
                             <div id="title-bar" className="nav-bar">
                                 <div className="nav-group">
                                     <NavLink id="company" className="nav-link" to="/"> Carpool </NavLink>
@@ -37,10 +40,13 @@ class App extends Component {
                                 </div>
                             </div>
                         </div>
+
+                        {/* Specifies which page to navigate to with each path */}
                         <div className="content">
                             <Route exact path="/" component={Home}/>
                             <Route exact path="/rides" component={Rides}/>
                             <Route exact path="/drive" component={Drive}/>
+                            <Route exact path="/signup" component={Signup}/>
                         </div>
                     </BrowserRouter>
                 </div>

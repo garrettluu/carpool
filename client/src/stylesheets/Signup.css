@@ -1,0 +1,128 @@
+/*-------------------Title-----------------*/
+
+/* Title Division */
+#signup-title{
+    height: 40%;
+}
+
+/* "Create your rides account today!" */
+#login-welcome{
+    padding-top: 50px;
+    text-align: center;
+    color: #66aacc;
+    text-shadow: 2px 2px 10px #CCCCCC;
+    font-size: 60px;
+    position: relative;
+    animation: textToTop 1.2s linear;
+}
+
+/* ---------------------Body--------------------- */
+
+/* The whole division containing signup info*/
+.signup-block{
+    padding-top: 50px;
+    overflow: hidden;
+    animation: bodyToTop 1.5s linear;
+}
+
+/* The left half of the page */
+#left-block{
+    width : 30%;
+    padding-left: 15%;
+    float:left;
+}
+
+/* The right half of the page */
+#right-block{
+    width:30%;
+    padding-left: 50%;
+}
+
+/* The texts above input boxes */
+.signup-text{
+    padding-top:5px;
+    font-weight: bold;
+}
+
+/* Input boxes */
+.signup-input{
+    width: 50%;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #AAAAAA;
+    padding-bottom: 10px;
+}
+
+/* Highlights the input box when hovered */
+.signup-input:hover{
+    width: 50%;
+    outline-width: 0px;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #8CBFD9;
+    padding-bottom: 10px;
+}
+
+/* Highlights the input box when selected */
+.signup-input:focus{
+    width: 50%;
+    outline-width: 0px;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #8CBFD9;
+    padding-bottom: 10px;
+}
+
+/* Creates extra spacing on bottom of each line */
+.signup-right-text{
+    padding-bottom: 30px;
+}
+
+/* Customizes link default color */
+#login-link{
+    color: #66aacc;
+}
+
+/* Changes link color when hovered */
+#login-link:hover{
+    color: #8CBFD9;
+}
+
+/* Fades the text because the functionality is coming soon :( I need help */
+#coming-soon{
+    color: #AAAAAA;
+}
+
+
+/* --------------------Animations-------------------*/
+
+/* Simple animation that makes text move up */
+@keyframes textToTop{
+    0%{
+        transform : translateY(20px);
+        opacity:0;
+    }
+
+    100%{
+        transform: translateY(0px);
+        opacity:1;
+    }
+}
+
+/* Animation of the login info, with a delay */
+@keyframes bodyToTop{
+    0%{
+        transform : translateY(40px);
+        opacity:0;
+    }
+
+    30%{
+        transform: translateY(20px);
+        opacity:0;
+    }
+
+    100%{
+        transform: translateY(0px);
+        opacity:1;
+    }
+}
