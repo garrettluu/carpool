@@ -20,7 +20,7 @@ const DivNullName = nullNameHandler(({ children }) => <div>{children}</div>)
 class Signup extends Component {
 
     // Defaults all the error messages to false
-    state = { nameIsNull: true }
+    state = { nameIsNull: false }
 
     /**
      * Checks the user info entered, then creates a new user if success
