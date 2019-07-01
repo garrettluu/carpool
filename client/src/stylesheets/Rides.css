@@ -29,3 +29,7 @@
   border-radius: 4px;
 }
 
+/* Changes the background of the button when hovered */
+.material-button:hover{
+    background: #555555;
+}
