@@ -110,6 +110,14 @@
 .material-button:hover{
     background: #555555;
 }
+
+/* Error message styles */
+.error-message {
+    color : #ff6666;
+    padding-top: 5px;
+    font-style: italic;
+}
+
 /* --------------------Animations-------------------*/
 
 /* Simple animation that makes text move up */

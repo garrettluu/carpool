@@ -10,7 +10,7 @@ import './stylesheets/Signup.css';
 const nullNameHandler = WrappedComponent => ({ nameIsNull, children }) => {
     return (
         <WrappedComponent>
-            {nameIsNull && <div className="error-message">User name can not be null</div>}
+            {nameIsNull && <div className="error-message">Error : User name can not be null</div>}
         </WrappedComponent>
     );
 }
@@ -20,7 +20,7 @@ const DivNullName = nullNameHandler(({ children }) => <div>{children}</div>)
 class Signup extends Component {
 
     // Defaults all the error messages to false
-    state = { nameIsNull: false }
+    state = { nameIsNull: true }
 
     /**
      * Checks the user info entered, then creates a new user if success
@@ -81,6 +81,7 @@ class Signup extends Component {
                         <input type="password" className="signup-input" ref="confirm-password"
                             placeholder="Must match with above" />
                         
+                        {/* Breaks for style purposes */}
                         <br/><br/>
 
                         {/* The button to submit the info entered */}
