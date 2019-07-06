@@ -21,14 +21,33 @@ const DivNullName = nullNameHandler(({ children }) => <div>{children}</div>)
 class Signup extends Component {
 
     // Defaults all the error messages to false
-    state = { nameIsNull: false }
+    state = { nameIsNull: false,
+              name: null
+            }
 
+    /**
+     * Handles the change of display name
+     */
+    changeName = (event) => {
+        var emptyName = false;
+        var displayName = event.target.value;
+        console.log("Display name :" + displayName);
+        if(displayName == null){
+            emptyName=true;
+        }
+        this.setState({
+            nameIsNull:emptyName,
+            name:displayName
+        })
+    }
     /**
      * Checks the user info entered, then creates a new user if success
      */
-    createUser= () => {
+    createUser = () => {
         // Processes the name 
         var name = REACTDOM.findDOMNode(this.refs.displayName).nodeValue;
+        console.log(this.refs);
+        console.log("Name:" + name); // Debug message
         // Check for empty names
         var nameIsEmpty = false;
         if (name == null) {
@@ -46,7 +65,7 @@ class Signup extends Component {
     }
 
     render() {
-    console.log("nameIsNull: " + this.state.nameIsNull); // Debug message
+        console.log("nameIsNull: " + this.state.nameIsNull); // Debug message
         /* Returns the frontend stuff */
         return (
             <div className="page">
@@ -63,7 +82,7 @@ class Signup extends Component {
 
                         {/* Text box for name */}
                         <p className="signup-text"> Display name: </p>
-                        <input type="text" className="signup-input" ref="displayName"
+                        <input type="text" ref="displayName" onChange={this.changeName}
                             placeholder="Gary Gillespie" />
 
                         {/* Possible error message for name is null */}
@@ -71,21 +90,21 @@ class Signup extends Component {
 
                         {/* Text box for email */}
                         <p className="signup-text"> Email address: </p>
-                        <input type="text" className="signup-input" ref="emailAddress"
+                        <input type="text" ref="emailAddress"
                             placeholder="example@gmail.com" />
 
                         {/* Text box for password */}
                         <p className="signup-text"> Password: </p>
-                        <input type="password" className="signup-input" ref="password"
+                        <input type="password" ref="password"
                             placeholder="7-16 characters" />
 
                         {/* Text box for confirm password */}
                         <p className="signup-text"> Confirm password: </p>
-                        <input type="password" className="signup-input" ref="confirmPassword"
+                        <input type="password" ref="confirmPassword"
                             placeholder="Must match with above" />
-                        
+
                         {/* Breaks for style purposes */}
-                        <br/><br/>
+                        <br /><br />
 
                         {/* The button to submit the info entered */}
                         <button className="material-button" onClick={this.createUser.bind(this)}>

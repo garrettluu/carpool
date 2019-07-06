@@ -45,7 +45,7 @@
 }
 
 /* Input boxes */
-.signup-input{
+input{
     width: 50%;
     background: transparent;
     border: none;
@@ -54,7 +54,7 @@
 }
 
 /* Highlights the input box when hovered */
-.signup-input:hover{
+input:hover{
     width: 50%;
     outline-width: 0px;
     background: transparent;
@@ -64,7 +64,7 @@
 }
 
 /* Highlights the input box when selected */
-.signup-input:focus{
+input:focus{
     width: 50%;
     outline-width: 0px;
     background: transparent;
