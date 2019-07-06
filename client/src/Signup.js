@@ -8,6 +8,7 @@ import './stylesheets/Signup.css';
 
 // The message that appears if user name is null
 const nullNameHandler = WrappedComponent => ({ nameIsNull, children }) => {
+    console.log("nameIsNull: " + nameIsNull); // Debug message
     return (
         <WrappedComponent>
             {nameIsNull && <div className="error-message">Error : User name can not be null</div>}
@@ -25,14 +26,15 @@ class Signup extends Component {
     /**
      * Checks the user info entered, then creates a new user if success
      */
-    createUser() {
+    createUser= () => {
         // Processes the name 
-        var name = REACTDOM.findDOMNode(this.refs.display - name).nodeValue;
+        var name = REACTDOM.findDOMNode(this.refs.displayName).nodeValue;
         // Check for empty names
         var nameIsEmpty = false;
         if (name == null) {
             nameIsEmpty = true;
         }
+        console.log("nameIsEmpty:" + nameIsEmpty); // Debug message
         // TODO : Need to process duplicate names
         // TODO : More error handling
 
@@ -44,6 +46,7 @@ class Signup extends Component {
     }
 
     render() {
+    console.log("nameIsNull: " + this.state.nameIsNull); // Debug message
         /* Returns the frontend stuff */
         return (
             <div className="page">
@@ -60,7 +63,7 @@ class Signup extends Component {
 
                         {/* Text box for name */}
                         <p className="signup-text"> Display name: </p>
-                        <input type="text" className="signup-input" ref="display-name"
+                        <input type="text" className="signup-input" ref="displayName"
                             placeholder="Gary Gillespie" />
 
                         {/* Possible error message for name is null */}
@@ -68,7 +71,7 @@ class Signup extends Component {
 
                         {/* Text box for email */}
                         <p className="signup-text"> Email address: </p>
-                        <input type="text" className="signup-input" ref="email-address"
+                        <input type="text" className="signup-input" ref="emailAddress"
                             placeholder="example@gmail.com" />
 
                         {/* Text box for password */}
@@ -78,14 +81,14 @@ class Signup extends Component {
 
                         {/* Text box for confirm password */}
                         <p className="signup-text"> Confirm password: </p>
-                        <input type="password" className="signup-input" ref="confirm-password"
+                        <input type="password" className="signup-input" ref="confirmPassword"
                             placeholder="Must match with above" />
                         
                         {/* Breaks for style purposes */}
                         <br/><br/>
 
                         {/* The button to submit the info entered */}
-                        <button className="material-button" onClick={this.createUser}>
+                        <button className="material-button" onClick={this.createUser.bind(this)}>
                             Sign Up
                         </button>
                     </div>
