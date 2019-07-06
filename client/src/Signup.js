@@ -9,9 +9,12 @@ import './stylesheets/Signup.css';
 // The message that appears if user name is null
 const nullNameHandler = WrappedComponent => ({ nameIsNull, children }) => {
     console.log("nameIsNull: " + nameIsNull); // Debug message
+    if(!nameIsNull){
+        return null;
+    }
     return (
         <WrappedComponent>
-            {nameIsNull && <div className="error-message">Error : User name can not be null</div>}
+            <div className="error-message">Error : User name can not be null</div>
         </WrappedComponent>
     );
 }
@@ -30,20 +33,21 @@ class Signup extends Component {
      */
     changeName = (event) => {
         var emptyName = false;
-        var displayName = event.target.value;
-        console.log("Display name :" + displayName);
-        if(displayName == null){
+        var displayNameValue = event.target.value;
+        console.log("Display name :" + displayNameValue);
+        if(displayNameValue == ""){
             emptyName=true;
         }
         this.setState({
             nameIsNull:emptyName,
-            name:displayName
+            name:displayNameValue
         })
     }
     /**
      * Checks the user info entered, then creates a new user if success
      */
     createUser = () => {
+        /*
         // Processes the name 
         var name = REACTDOM.findDOMNode(this.refs.displayName).nodeValue;
         console.log(this.refs);
@@ -56,10 +60,11 @@ class Signup extends Component {
         console.log("nameIsEmpty:" + nameIsEmpty); // Debug message
         // TODO : Need to process duplicate names
         // TODO : More error handling
-
+*/
         // Returns a bunch of properties...
+        console.log("Button click detected"); // Debug message
         return {
-            nameIsNull: nameIsEmpty
+            nameIsNull: this.state.nameIsNull
         };
 
     }
