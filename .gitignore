@@ -1,3 +1,4 @@
 node_modules/
 .idea/
-client_secret.json
+package-lock.json
+client/package-lock.json
