@@ -1,77 +1,92 @@
 import React, { Component } from 'react';
-import REACTDOM from 'react-dom';
+//import REACTDOM from 'react-dom';
 import './stylesheets/Signup.css';
 
-/**
-  * Error messages that appear conditionally
-  */
-
+/* ------------------------Error Handling------------------------ */
 // The message that appears if user name is null
-const nullNameHandler = WrappedComponent => ({ nameIsNull, children }) => {
-    console.log("nameIsNull: " + nameIsNull); // Debug message
+const nullNameHandler = WrappedComponent => 
+                        ({ nameIsNull, nameHasBeenClicked}) => {
+    // Determines if we need to check the name field
+    var shouldCheckError = false;
+    if(nameHasBeenClicked){
+        shouldCheckError = true;
+    }
+
+    // If we don't need to check, don't display the error message
+    if( !shouldCheckError ){
+        return null;
+    }
+
+    // If we have something in the name field, don't display the error message
     if(!nameIsNull){
         return null;
     }
+
+    // Otherwise, display the error message
     return (
         <WrappedComponent>
-            <div className="error-message">Error : User name can not be null</div>
+            <div className="error-message">Error : User name can not be empty</div>
         </WrappedComponent>
     );
 }
+
 // Now we build this message...
 const DivNullName = nullNameHandler(({ children }) => <div>{children}</div>)
 
+/* -------------------------------Class body------------------------------------ */
 class Signup extends Component {
 
-    // Defaults all the error messages to false
-    state = { nameIsNull: false,
-              name: null
+    // Default state of this page
+    state = { name: null,
+              nameIsNull: true,
+              nameHasBeenClicked: false,
+              currentSelection:null
             }
+
+    /* -----------------------Functions to change state --------------------*/
 
     /**
      * Handles the change of display name
+     * 
+     * @Param event The event in which the input value is changed
      */
     changeName = (event) => {
+        // Initialization; get the current name
         var emptyName = false;
         var displayNameValue = event.target.value;
-        console.log("Display name :" + displayNameValue);
+        // Decide if the name is empty
         if(displayNameValue == ""){
             emptyName=true;
         }
+        // Change the states accordingly
         this.setState({
             nameIsNull:emptyName,
             name:displayNameValue
         })
     }
+
+    /**
+     * Handles when the name input is selected
+     */
+    nameClicked = () =>{
+        this.setState({
+            nameHasBeenClicked:true,
+            currentSelection:"name"
+        })
+    }
+
     /**
      * Checks the user info entered, then creates a new user if success
      */
     createUser = () => {
-        /*
-        // Processes the name 
-        var name = REACTDOM.findDOMNode(this.refs.displayName).nodeValue;
-        console.log(this.refs);
-        console.log("Name:" + name); // Debug message
-        // Check for empty names
-        var nameIsEmpty = false;
-        if (name == null) {
-            nameIsEmpty = true;
-        }
-        console.log("nameIsEmpty:" + nameIsEmpty); // Debug message
-        // TODO : Need to process duplicate names
-        // TODO : More error handling
-*/
-        // Returns a bunch of properties...
-        console.log("Button click detected"); // Debug message
         return {
             nameIsNull: this.state.nameIsNull
         };
 
     }
 
+    /*-------------------All the visual contents---------------- */
     render() {
-        console.log("nameIsNull: " + this.state.nameIsNull); // Debug message
-        /* Returns the frontend stuff */
         return (
             <div className="page">
                 {/* Title message */}
@@ -87,11 +102,14 @@ class Signup extends Component {
 
                         {/* Text box for name */}
                         <p className="signup-text"> Display name: </p>
-                        <input type="text" ref="displayName" onChange={this.changeName}
+                        <input type="text" ref="displayName" onChange={this.changeName} 
+                        onFocus={this.nameClicked}
                             placeholder="Gary Gillespie" />
 
                         {/* Possible error message for name is null */}
-                        <DivNullName nameIsNull={this.state.nameIsNull} />
+                        <DivNullName nameIsNull={this.state.nameIsNull} 
+                        nameHasBeenClicked={this.state.nameHasBeenClicked}
+                        currentSelection={this.state.currentSelection}/>
 
                         {/* Text box for email */}
                         <p className="signup-text"> Email address: </p>
