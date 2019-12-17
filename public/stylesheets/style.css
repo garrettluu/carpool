@@ -147,16 +147,14 @@ body {
   border-radius: 4px;
 }
 
-<<<<<<< HEAD
 div.themed_background{
     font-family: "Raleway";
     background-image: url("/images/long-road.jpg");
     padding : 20px;
     height: 100%;
-=======
+}
 #driver-container {
   padding: 20px;
->>>>>>> origin/master
 }
 
 .driver {
